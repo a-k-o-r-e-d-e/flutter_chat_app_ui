@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app_ui/constants/strings.dart';
+import 'package:flutter_chat_app_ui/models/chat_users_model.dart';
 import 'package:flutter_chat_app_ui/screens/chat_detail_page.dart';
 
 class ConversationListItem extends StatefulWidget {
-  String name;
-  String messageText;
-  String imageUrl;
-  String time;
-  bool isMessageRead;
+  final bool isMessageRead;
+  final ChatUser chatUser;
 
   ConversationListItem(
-      {@required this.name,
-      @required this.messageText,
-      @required this.imageUrl,
-      @required this.time,
+      {
+        @required this.chatUser,
       @required this.isMessageRead});
 
   @override
@@ -25,7 +22,7 @@ class _ConversationListItemState extends State<ConversationListItem> {
     return GestureDetector(
         onTap: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => ChatDetailPage()));
+              .push(MaterialPageRoute(builder: (_) => ChatDetailPage(chatUser: widget.chatUser,)));
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
@@ -36,7 +33,7 @@ class _ConversationListItemState extends State<ConversationListItem> {
                 children: [
                   CircleAvatar(
                     backgroundImage: NetworkImage(
-                        'https://i.pravatar.cc/150?u=' + widget.imageUrl),
+                        randomUserBaseUrl + widget.chatUser.imageUrl),
                     maxRadius: 30,
                   ),
                   SizedBox(
@@ -49,14 +46,14 @@ class _ConversationListItemState extends State<ConversationListItem> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.name,
+                          widget.chatUser.name,
                           style: TextStyle(fontSize: 16),
                         ),
                         SizedBox(
                           height: 6,
                         ),
                         Text(
-                          widget.messageText,
+                          widget.chatUser.messageText,
                           style: TextStyle(
                               fontSize: 13,
                               color: Colors.grey.shade600,

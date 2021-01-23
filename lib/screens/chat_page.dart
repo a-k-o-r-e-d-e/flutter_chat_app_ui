@@ -10,15 +10,15 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
 
-  List<ChatUsers> chatUsers = [
-    ChatUsers(name: "Jane Russel", messageText: "Awesome Setup", imageUrl: "/userImage1.jpeg", time: "Now"),
-    ChatUsers(name: "Glady's Murphy", messageText: "That's Great", imageUrl: "/userImage2.jpeg", time: "Yesterday"),
-    ChatUsers(name: "Jorge Henry", messageText: "Hey where are you?", imageUrl: "/userImage3.jpeg", time: "31 Mar"),
-    ChatUsers(name: "Philip Fox", messageText: "Busy! Call me in 20 mins", imageUrl: "/userImage4.jpeg", time: "28 Mar"),
-    ChatUsers(name: "Debra Hawkins", messageText: "Thankyou, It's awesome", imageUrl: "/userImage5.jpeg", time: "23 Mar"),
-    ChatUsers(name: "Jacob Pena", messageText: "will update you in evening", imageUrl: "/userImage6.jpeg", time: "17 Mar"),
-    ChatUsers(name: "Andrey Jones", messageText: "Can you please share the file?", imageUrl: "/userImage7.jpeg", time: "24 Feb"),
-    ChatUsers(name: "John Wick", messageText: "How are you?", imageUrl: "/userImage8.jpeg", time: "18 Feb"),
+  List<ChatUser> chatUsers = [
+    ChatUser(name: "Jane Russel", messageText: "Awesome Setup", imageUrl: "1.jpg", time: "Now"),
+    ChatUser(name: "Glady's Murphy", messageText: "That's Great", imageUrl: "2.jpg", time: "Yesterday"),
+    ChatUser(name: "Jorge Henry", messageText: "Hey where are you?", imageUrl: "3.jpg", time: "31 Mar"),
+    ChatUser(name: "Philip Fox", messageText: "Busy! Call me in 20 mins", imageUrl: "4.jpg", time: "28 Mar"),
+    ChatUser(name: "Debra Hawkins", messageText: "Thankyou, It's awesome", imageUrl: "5.jpg", time: "23 Mar"),
+    ChatUser(name: "Jacob Pena", messageText: "will update you in evening", imageUrl: "6.jpg", time: "17 Mar"),
+    ChatUser(name: "Andrey Jones", messageText: "Can you please share the file?", imageUrl: "7.jpg", time: "24 Feb"),
+    ChatUser(name: "John Wick", messageText: "How are you?", imageUrl: "8.jpg", time: "18 Feb"),
   ];
 
   @override
@@ -81,7 +81,7 @@ class _ChatPageState extends State<ChatPage> {
               padding: EdgeInsets.only(top: 16),
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return ConversationListItem(name: chatUsers[index].name, messageText: chatUsers[index].messageText, imageUrl: chatUsers[index].imageUrl, time: chatUsers[index].time, isMessageRead: (index == 0 || index == 3) ? true : false);
+                return ConversationListItem(chatUser: chatUsers[index], isMessageRead: (index == 0 || index == 3) ? true : false);
               })
         ],
       ),

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_app_ui/constants/enums.dart';
+import 'package:flutter_chat_app_ui/constants/strings.dart';
 import 'package:flutter_chat_app_ui/models/chat_message_model.dart';
+import 'package:flutter_chat_app_ui/models/chat_users_model.dart';
 
 class ChatDetailPage extends StatefulWidget {
+
+  final ChatUser chatUser;
+  
+  ChatDetailPage({@required this.chatUser});
+  
+  
   @override
   _ChatDetailPageState createState() => _ChatDetailPageState();
 }
@@ -12,8 +20,8 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   List<ChatMessage> messages = [
     ChatMessage(messageContent: "Hello, Will", messageType: MessageType.receiver ),
     ChatMessage(messageContent: "How have you been?", messageType: MessageType.receiver),
-    ChatMessage(messageContent: "Hey Kriss, I am doing fine dude. wbu?", messageType: MessageType.sender),
-    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: MessageType.receiver),
+    ChatMessage(messageContent: "Hey Pal, I am doing fine dude. wbu?", messageType: MessageType.sender),
+    ChatMessage(messageContent: "Ehhhh, doing OK.", messageType: MessageType.receiver),
     ChatMessage(messageContent: "Is there any thing wrong?", messageType: MessageType.sender),
   ];
 
@@ -40,7 +48,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                 ),
                 CircleAvatar(
                   backgroundImage: NetworkImage(
-                      "https://randomuser.me/api/portraits/men/5.jpg"),
+                      randomUserBaseUrl + "${widget.chatUser.imageUrl}"),
                   maxRadius: 20,
                 ),
                 SizedBox(
@@ -52,7 +60,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Kriss Benwat",
+                      widget.chatUser.name,
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                     ),

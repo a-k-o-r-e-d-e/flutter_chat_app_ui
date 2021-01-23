@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ChatUsers {
+class ChatUser {
   String name;
   String messageText;
   String imageUrl;
   String time;
 
-  ChatUsers(
+  ChatUser(
       {@required this.name,
       @required this.messageText,
       @required this.imageUrl,
