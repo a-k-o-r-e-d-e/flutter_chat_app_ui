@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app_ui/models/chat_message_model.dart';
 
 class ChatDetailPage extends StatefulWidget {
   @override
@@ -6,6 +7,16 @@ class ChatDetailPage extends StatefulWidget {
 }
 
 class _ChatDetailPageState extends State<ChatDetailPage> {
+
+  List<ChatMessage> messages = [
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(messageContent: "Hey Kriss, I am doing fine dude. wbu?", messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(messageContent: "Is there any thing wrong?", messageType: "sender"),
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +76,25 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       ),
       body: Stack(
         children: [
+          ListView.builder(
+            itemCount: messages.length,
+              shrinkWrap: true,
+              padding: EdgeInsets.symmetric(vertical: 10),
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                  child: Align(
+                    alignment: (messages[index].messageType == "receiver" ? Alignment.topLeft : Alignment.topRight ),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: (messages[index].messageType == "receiver" ? Colors.grey.shade200 : Colors.blue[200]),
+                          ),
+                          padding: EdgeInsets.all(16),
+                          child: Text(messages[index].messageContent, style: TextStyle(fontSize: 15),))),
+                );
+              }),
           Align(
               alignment: Alignment.bottomLeft,
               child: Container(
