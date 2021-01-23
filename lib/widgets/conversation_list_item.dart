@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app_ui/screens/chat_detail_page.dart';
 
 class ConversationListItem extends StatefulWidget {
   String name;
@@ -22,7 +23,10 @@ class _ConversationListItemState extends State<ConversationListItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => ChatDetailPage()));
+        },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           child: Row(
@@ -31,7 +35,8 @@ class _ConversationListItemState extends State<ConversationListItem> {
                   child: Row(
                 children: [
                   CircleAvatar(
-                    backgroundImage: NetworkImage('https://i.pravatar.cc/150?u='+ widget.imageUrl),
+                    backgroundImage: NetworkImage(
+                        'https://i.pravatar.cc/150?u=' + widget.imageUrl),
                     maxRadius: 30,
                   ),
                   SizedBox(
