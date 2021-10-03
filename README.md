@@ -2,14 +2,15 @@
 
 A Chat App UI implemented in Flutter
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+<h2> ** ScreenShots </h2>
+<br><hr><hr><br>
+<h5> Chat List Screen </h5>
+![Chat List Screen](/screenshots/chat_list_screen.png)
+<br><hr><hr><br>
+<h5> Chat Screen </h5>
+![Chat Screen](/screenshots/chat_screen.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,

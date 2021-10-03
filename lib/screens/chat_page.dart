@@ -11,12 +11,12 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
 
   List<ChatUser> chatUsers = [
-    ChatUser(name: "Jane Russel", messageText: "Awesome Setup", imageUrl: "1.jpg", time: "Now"),
-    ChatUser(name: "Glady's Murphy", messageText: "That's Great", imageUrl: "2.jpg", time: "Yesterday"),
-    ChatUser(name: "Jorge Henry", messageText: "Hey where are you?", imageUrl: "3.jpg", time: "31 Mar"),
-    ChatUser(name: "Philip Fox", messageText: "Busy! Call me in 20 mins", imageUrl: "4.jpg", time: "28 Mar"),
-    ChatUser(name: "Debra Hawkins", messageText: "Thankyou, It's awesome", imageUrl: "5.jpg", time: "23 Mar"),
-    ChatUser(name: "Jacob Pena", messageText: "will update you in evening", imageUrl: "6.jpg", time: "17 Mar"),
+    ChatUser(name: "Julian Dasilva", messageText: "Awesome Setup", imageUrl: "1.jpg", time: "Now"),
+    ChatUser(name: "Mike Lyne", messageText: "That's Great", imageUrl: "2.jpg", time: "Yesterday"),
+    ChatUser(name: "Claire Kumas", messageText: "Hey where are you?", imageUrl: "3.jpg", time: "31 Mar"),
+    ChatUser(name: "Blair Dota", messageText: "Busy! Call me in 20 mins", imageUrl: "4.jpg", time: "28 Mar"),
+    ChatUser(name: "Molly Clark", messageText: "Thank you, It's awesome", imageUrl: "5.jpg", time: "23 Mar"),
+    ChatUser(name: "Ashley Williams", messageText: "will update you in evening", imageUrl: "6.jpg", time: "17 Mar"),
     ChatUser(name: "Andrey Jones", messageText: "Can you please share the file?", imageUrl: "7.jpg", time: "24 Feb"),
     ChatUser(name: "John Wick", messageText: "How are you?", imageUrl: "8.jpg", time: "18 Feb"),
   ];
